@@ -1,3 +1,21 @@
-<p>
-  {{category}}
-</p>
+<div>
+  <h2>My Categories</h2>
+  <ul class="categories">
+    <li *ngFor="let category of categories"
+        (click)="onSelect(category)"
+        [class.selected]="category === selectedCategory">
+      <span class="badge">{{category.id}}</span> {{category.name}}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedCategory">
+    <h2>{{ selectedCategory.name | uppercase }}</h2>
+    <div><span>id: </span>{{selectedCategory.id}}</div>
+    <div>
+        <label>name:
+            <input [(ngModel)]="selectedCategory.name" placeholder="name">
+        </label>
+    </div>
+</div>
+
