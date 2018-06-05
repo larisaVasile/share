@@ -13,9 +13,9 @@ export class CategoriesComponent implements OnInit {
     }
     categories = CATEGORIES;
     selectedCategory: Category;
+    ngOnInit() {
+    }
     onSelect(category: Category): void {
         this.selectedCategory = category;
-    }
-    ngOnInit() {
     }
 }
