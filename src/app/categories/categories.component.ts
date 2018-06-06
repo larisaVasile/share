@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Category} from '../category';
-import {CATEGORIES} from '../mock-categories';
+import { CategoriesService } from '../categories.service';
 
 @Component({
     selector: 'app-categories',
@@ -9,11 +9,17 @@ import {CATEGORIES} from '../mock-categories';
 })
 export class CategoriesComponent implements OnInit {
 
-    constructor() {
+    constructor(private categoriesService: CategoriesService) {
     }
-    categories = CATEGORIES;
+    categories: Category[];
     selectedCategory: Category;
+
+    getCategories(): void{
+        this.categories = this.categoriesService.getCategories();
+    }
+
     ngOnInit() {
+        this.getCategories();
     }
     onSelect(category: Category): void {
         this.selectedCategory = category;
