@@ -9,10 +9,15 @@ import { MessageService } from './message.service';
 })
 export class CategoriesService {
 
-  constructor(private messageService : MessageService) { }
+  constructor(private messageService: MessageService) { }
     getCategories(): Observable<Category[]> {
         this.messageService.add('CategoriesService: fetched categories');
         return of(CATEGORIES);
+    }
+    getCategory(id: number): Observable<Category> {
+      console.log('in getCategory');
+      this.messageService.add(`CategoriesService: fetched category id=${id}`);
+      return of(CATEGORIES.find(category => category.id === id));
     }
 }
 
