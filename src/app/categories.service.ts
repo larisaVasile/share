@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import {CATEGORIES} from './mock-categories';
 import {Category} from './category';
+import { Observable, of } from 'rxjs';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriesService {
 
-  constructor() { }
-    getCategories(): Category[] {
-        return CATEGORIES;
+  constructor(private messageService : MessageService) { }
+    getCategories(): Observable<Category[]> {
+        this.messageService.add('CategoriesService: fetched categories');
+        return of(CATEGORIES);
     }
 }
+
+

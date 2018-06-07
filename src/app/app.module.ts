@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms'; //
 import { AppComponent } from './app.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoriesComponent,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
