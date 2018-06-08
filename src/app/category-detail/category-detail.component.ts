@@ -29,4 +29,9 @@ export class CategoryDetailComponent implements OnInit {
     goBack(): void {
         this.location.back();
     }
+
+    save(): void {
+        this.categoriesService.updateCategory(this.category)
+            .subscribe(() => this.goBack());
+    }
 }
