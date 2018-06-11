@@ -12,6 +12,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { CategorySearchComponent } from './category-search/category-search.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
     CategoryDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    CategorySearchComponent,
   ],
   imports: [
     BrowserModule,
